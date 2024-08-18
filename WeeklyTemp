@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class WeeklyTemp {
+    public static void main(String[] args) {
+        int[] temps = {75, 85, 71, 82, 75, 84, 91};
+        String[] days = {"Monday", "Tuesday" , "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        float sum = 0; 
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a day of the week or \"Week\"");
+        String inputday = scanner.nextLine(); 
+
+        for (int i = 0; i < days.length; i++) {
+            if (days[i].equalsIgnoreCase(inputday)) {
+                System.out.println("On " + days[i] + " the temperature will be " + temps[i]);
+            }
+        }
+    if (inputday.equalsIgnoreCase("week")) {
+            for (int i = 0; i <days.length; i++) {
+                System.out.println("On " + days[i] + " the temperature will be " + temps[i]);
+                sum += temps[i];
+                if (i == 6) {
+                    float average = sum / temps.length;
+                    System.out.print("and the weekly average is " + (average));
+                }
+
+        }
+        
+     scanner.close();   
+    }
+}}
+        
